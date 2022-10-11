@@ -2,7 +2,6 @@ const { Client, Collection, Intents } = require("discord.js");
 const Config = require("./TheSatuke/Configuration/Config.json")
 const client = global.client = new Client({ intents: [Object.keys(Intents.FLAGS)],})
 const fs = require("fs")
-
 let EventId = 0;
 
 let event = fs.readdirSync('./TheSatuke/Events', { encoding: "utf8" });
@@ -18,7 +17,7 @@ event.forEach(dir => {
 })
 
 
-client.on('error', m => console.log(`[Moderation Error Type 1]: ${m}`));
+client.on('error', m => console.log(`[Bot Error Type 1]: ${m}`));
 client.on("disconnect", () => console.log("Bot bağlantısı kesildi"))
 client.on("reconnecting", () => console.log("Bot tekrar bağlanıyor..."))
 process.on('uncaughtException', error => console.log(`[Moderation Error Type 2]: ${error}`));
